@@ -18,6 +18,3 @@ class Solution:
             return True
         else:
             return False
-            
-palindrome = Solution()
-print(palindrome.isPalindrome(-121))

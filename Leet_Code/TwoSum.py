@@ -15,6 +15,3 @@ class Solution:
             if(check):
                 break
         return ans
-
-twosum=Solution()
-print(twosum.twoSum([1,2,3,4],3))

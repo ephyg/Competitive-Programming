@@ -1,45 +1,28 @@
 class Solution:
     def romanToInt(self, s: str) -> int:
-        I=1
-        V=5
-        X=10
-        L=50
-        C=100
-        D=500
-        M=1000
-        nums=0
-        romNumber=[I,V,X,L,C,D,M]
         RomNumber=[]
         for i in range(len(s)):
             if (s[i]=='M'):
-                RomNumber.append(M)
+                RomNumber.append(1000)
             elif(s[i]=='D'):
-                RomNumber.append(D)
+                RomNumber.append(500)
             elif(s[i]=='C'):
-                RomNumber.append(C)
+                RomNumber.append(100)
             elif(s[i]=='L'):
-                RomNumber.append(L)
+                RomNumber.append(50)
             elif(s[i]=='X'):
-                RomNumber.append(X)
+                RomNumber.append(10)
             elif(s[i]=='V'):
-                RomNumber.append(V)
+                RomNumber.append(5)
             else:
-                RomNumber.append(I)
-    
+                RomNumber.append(1)
+        nums=RomNumber[-1]
         for i in range(len(s)-1):
             for j in range(i+1,len(s)):
                 if (RomNumber[i]>=RomNumber[j]):
                     nums+=RomNumber[i]
-                    print(RomNumber[i],i,j)
                     break
                 else:
-                    nums+=(RomNumber[j]-RomNumber[i])
-                    i+=2
-                    j+=2
-                    break
-               
-        
-        print (RomNumber)      
+                    nums-=RomNumber[i]
+                    break            
         return nums
-sol=Solution()
-print(sol.romanToInt( "MCDLXVI"))
