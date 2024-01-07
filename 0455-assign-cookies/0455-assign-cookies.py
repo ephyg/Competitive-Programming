@@ -3,7 +3,6 @@ class Solution:
         g.sort()
         s.sort()
         counter=0
-        # minimum=min(len(g),len(s))
         left=0
         right=0
         while left<len(s) and right<len(g):
